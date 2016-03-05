@@ -44,7 +44,8 @@
 		}
 		return newStr;
 	}
-	document.onload = function(){}
+	function generateTweets() {
+	}
 	</script>
 	</head>
 	<body>
@@ -52,7 +53,7 @@
 		<section id="content"></section>
             <section id="content">
                 
-         <center><form><p style = "height: 2em">
+         <center><form onsubmit="event.preventDefault(); generateTweets();"><p style = "height: 2em">
                  <input type="text" name="keyword">&nbsp&nbsp&nbsp<input type="submit" value="Submit">    
           </p></form></center>
           
