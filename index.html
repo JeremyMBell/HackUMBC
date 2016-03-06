@@ -4,7 +4,7 @@
 		<title>Social Media Analyzer</title>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-        <script type="text/javascript" src="https://raw.githubusercontent.com/ddo/oauth-1.0a/master/oauth-1.0a.js"></script>
+        <script type="text/javascript" src="oauth-1.0a.js"></script>
 		<script type="text/javascript">
 		function generateTweets() {
 
@@ -22,8 +22,10 @@
 			  dataType: 'json',
 			  url: "https://api.twitter.com/oauth2/token",			
 			};
+			console.log("Before oauth");
 			var token = {"public": config.consumerKey, "secret":config.consumerSecret};
 			var oauth = OAuth(token);
+			console.log("after oauth");
     		var encoded = btoa(config.consumerKey + ":" + config.consumerSecret);
     		/*$.ajax({
 			  type: "POST",
@@ -55,6 +57,7 @@
         success: function(data) { alert('hello!'); console.log(data);},
         error: function(html) { alert(html); console.log("Definitely error");},
     });
+		console.log("After ajax");
 
 
 		}
