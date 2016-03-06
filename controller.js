@@ -41,4 +41,5 @@ app.controller('TwitterController', ['$scope', function($scope) {
 			}
 			return newStr;
 		};
+	$scope.getJSONFromQuery
 }]);
