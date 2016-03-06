@@ -16,20 +16,32 @@
 		        "callBackUrl": ""
 
     		}
-
-    		var twitter = new Twitter(config);
     		var encoded = btoa(config.consumerKey + ":" + config.consumerSecret);
 
     		$.ajax({
 			  method: "POST",
+			  dataType: 'jsonp',
 			  url: "https://api.twitter.com/oauth2/token",
-			  header: { "Authorization": "Bearer " + encoded }
+			  header: { "Authorization": "Bearer " + encoded,
+							"Host": "https://api.twitter.com",
+							"User-Agent": "Query Analysis",
+							"Accept-Encoding": "gzip",
+							"Content-Type": "application/json",
+							},
+				data: {},
+				success: function(msg) {
+					console.log("Success");
+					console.log(msg);
+				},
+				error: function(msg) {
+					console.log(msg);
+				},
 			})
 			  .done(function( msg ) {
+				console.log(msg);
 			    alert( "Data Saved: " + msg );
 			});
 
-    		};
 		}
 		
 		</script>
