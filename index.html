@@ -47,6 +47,25 @@
 			return newStr;
 		}
 		function generateTweets() {
+			var error = function (err, response, body) {
+		        console.log('ERROR [%s]', err);
+		    };
+		    var success = function (data) {
+		        console.log('Data [%s]', data);
+		    };
+
+		    var Twitter = require('twitter-js-client').Twitter;
+
+		    //Get this data from your twitter apps dashboard
+		    var config = {
+		        "consumerKey": "DydC0RS4ZALTXORYdK83bHltr",
+		        "consumerSecret": "Pqlczg8LAeNumhqen2HkGpfMwE54hIMhVxbLotDcbTY690H7ni",
+		        "accessToken": "335499678-gzx1XPH3p3UCTBPDXf5Ppx57FCs8WiYJc6SCHsVs",
+		        "accessTokenSecret": "eWbJ6ACuwzatrfOoVuHVsN7vwtqHZFhz3End98QmKfvFR",
+		        "callBackUrl": ""
+    		}
+
+    		var twitter = new Twitter(config);
 		}
 		</script>
 	</head>
