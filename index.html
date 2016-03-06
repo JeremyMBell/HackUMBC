@@ -6,14 +6,6 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 		<script type="text/javascript">
 		function generateTweets() {
-			var error = function (err, response, body) {
-		        console.log('ERROR [%s]', err);
-		    };
-		    var success = function (data) {
-		        console.log('Data [%s]', data);
-		    };
-
-		    var Twitter = require('twitter-js-client').Twitter;
 
 		    //Get this data from your twitter apps dashboard
 		    var config = {
@@ -22,11 +14,11 @@
 		        "accessToken": "335499678-gzx1XPH3p3UCTBPDXf5Ppx57FCs8WiYJc6SCHsVs",
 		        "accessTokenSecret": "eWbJ6ACuwzatrfOoVuHVsN7vwtqHZFhz3End98QmKfvFR",
 		        "callBackUrl": ""
-    		}
-
-    		var twitter = new Twitter(config);
-			console.log(twitter);
+    		};
+			var encoded = btoa(config.consumerKey + ":" + config.consumerSecret);
+			console.log(encoded);
 		}
+		
 		</script>
 	</head>
 	<body ng-app="SocialApp">
